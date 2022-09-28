@@ -19,27 +19,25 @@ const ProductoList = () => {
     return (
         <Row gutter={16}>
             {
-                // indicates very long content
-                // Array.from(
-                //     {
-                //         length: 100,
-                //     },
-                //     (_, index) => (
-                //         <Col className="gutter-box" >
-                //             <Producto />
-                //         </Col>
-                //     ),
-                // )
                 basedatos.map(elemento => {
-                    return(
-                    <Col className="gutter-box" >
-                        <Producto valor={elemento} />
-                    </Col>
+                    return (
+                        <Col className="gutter-box" >
+                            <Producto valor={elemento} />
+                        </Col>
                     )
-                    
+
                 })
             }
         </Row>
     )
 }
+
+export const ModificarPersona = (persona) => {
+    basedatos[basedatos.findIndex(obj => { return obj.key === persona.key })].key = persona.key
+    basedatos[basedatos.findIndex(obj => { return obj.key === persona.key })].detalle = persona.detalle
+    basedatos[basedatos.findIndex(obj => { return obj.key === persona.key })].titulo = persona.titulo
+    console.log(persona)
+    console.log(basedatos[basedatos.findIndex(obj => { return obj.key === persona.key })])
+}
+
 export default ProductoList;

@@ -16,14 +16,12 @@ const Producto = (props) => {
         src={props.valor.avatar}
       />}
       actions={[
-        <SettingOutlined/>,
+        <SettingOutlined />,
         <ModificarDrawer
-          avatar={<Avatar src={props.valor.avatar} />}
-          detalle={<img
-            alt="example"
-            src={props.valor.avatar}
-          />} />,
-        <DetallesModal/>,
+          avatar={props.valor.avatar}
+          title={props.valor.titulo}
+        />,
+        <DetallesModal />,
       ]}
     >
       <Meta
